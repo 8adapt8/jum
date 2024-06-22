@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello there</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('frogi.png') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .text-container {
+            text-align: center;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            animation: slideIn 1s ease-out;
+        }
+        
+        h1 {
+            font-size: 20px;
+            color: black;
+            margin: 10px 0;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: linear-gradient(45deg, #07be72, #157e56);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            margin: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #0db136, #0992d1);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .bottom-button-container {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .message {
+            display: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <h1>Hello, since you did the right thing and you pressed the button, I want you to know that I love you and I will always work hard for you. And hey, what do we say? MCDONALD'SSSSS.</h1>
+        <h1>Don't mind the froggi, he looks sad but he is HAPPY TO BE INCLUDED.</h1>
+        <div class="button-container">
+            <button onclick="playSong()">Press me Jum</button>
+        </div>
+    </div>
+    <div class="bottom-button-container">
+        <button onclick="toggleMessage()">Hello can you press me too</button>
+        <div class="message" id="message">
+            <h1>Final message: I love you and I wish you a happy birthday. I will always be there for you. I don't want you to worry about anything because I'm always going to be there for you. I am your man and I will never turn my back on you. I love you.</h1>
+        </div>
+    </div>
+    <audio id="song" src="Radioheadcreep.mp3"></audio>
+    <script>
+        function playSong() {
+            var song = document.getElementById('song');
+            song.play();
+        }
+
+        function toggleMessage() {
+            var message = document.getElementById('message');
+            if (message.style.display === 'block') {
+                message.style.display = 'none';
+            } else {
+                message.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
